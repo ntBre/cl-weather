@@ -3,10 +3,6 @@
 
 (in-package :com.bwestbro.weather)
 
-;; turn off string-elision length, see
-;; https://github.com/joaotavora/sly/issues/334
-;; (setf (cdr (assoc 'slynk:*string-elision-length* slynk:*slynk-pprint-bindings*)) nil)
-
 (defparameter *hourly-weather-url*
   "https://forecast.weather.gov/MapClick.php?lat=34.37&lon=-89.52&FcstType=digitalDWML")
 
@@ -50,3 +46,6 @@
   (mapcar #'list
 	  (extract-time weather)
 	  (extract-hourly-temp weather)))
+
+;; TODO probably tidy time format and do something fun with these data
+;; points. plotting?
