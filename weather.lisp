@@ -3,6 +3,7 @@
 
 (in-package :com.bwestbro.weather)
 
+;; FcstType=digital gives table and =graphical gives graphs
 (defparameter *hourly-weather-url*
   "https://forecast.weather.gov/MapClick.php?lat=34.37&lon=-89.52&FcstType=digitalDWML")
 

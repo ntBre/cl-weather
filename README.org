@@ -1,3 +1,7 @@
+* Dependencies
+  - [[https://edicl.github.io/drakma][Drakma for HTTP requests]]
+  - [[https://common-lisp.net/project/xmls/README.html][XMLS for XML processing]]
+
 * TODOs
   - process XML into something usable, extract the useful parts
   - plot the hourly temperature data therein
