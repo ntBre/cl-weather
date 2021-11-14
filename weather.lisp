@@ -3,7 +3,8 @@
 
 (in-package :com.bwestbro.weather)
 
-;; turn off string-elision length
+;; turn off string-elision length, see
+;; https://github.com/joaotavora/sly/issues/334
 ;; (setf (cdr (assoc 'slynk:*string-elision-length* slynk:*slynk-pprint-bindings*)) nil)
 
 (defparameter *hourly-weather-url*
