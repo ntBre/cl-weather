@@ -1,0 +1,5 @@
+* TODOs
+  - process XML into something usable, extract the useful parts
+  - plot the hourly temperature data therein
+  - add more data sources for more aspects of the weather
+  - actually build the dashboard, probably using [[https://rabbibotton.github.io/clog/clog-manual.html][CLOG]]
