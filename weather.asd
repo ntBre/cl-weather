@@ -7,4 +7,4 @@
   :author "Brent R. Westbrook <brent@bwestbro.com>"
   :components
   ((:file "weather"))
-  :depends-on (:xmls :drakma :flexi-streams))
+  :depends-on (:xmls :drakma :flexi-streams :cl-ppcre))

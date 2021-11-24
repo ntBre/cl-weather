@@ -1,9 +1,20 @@
 * Dependencies
-  - [[https://edicl.github.io/drakma][Drakma for HTTP requests]]
-  - [[https://common-lisp.net/project/xmls/README.html][XMLS for XML processing]]
+** Common Lisp Libraries
+   - [[https://edicl.github.io/drakma][Drakma for HTTP requests]]
+   - [[https://common-lisp.net/project/xmls/README.html][XMLS for XML processing]]
+   - [[https://edicl.github.io/flexi-streams/][FLEXI-STREAMS]] for converting octets to string
+     - this came with XMLS
+     - XMLS has an xmls/octets subpackage, but it operates on a stream
+       instead of on a list of octets returned by Drakma
+   - [[https://edicl.github.io/cl-ppcre][CL-PPCRE]] for regular expressions/string manipulation
+** External programs
+   - [[http://www.gnuplot.info/][gnuplot]] for plotting
 
 * TODOs
-  - process XML into something usable, extract the useful parts
-  - plot the hourly temperature data therein
-  - add more data sources for more aspects of the weather
-  - actually build the dashboard, probably using [[https://rabbibotton.github.io/clog/clog-manual.html][CLOG]]
+  - [X] process XML into something usable, extract the useful parts
+  - [X] plot the hourly temperature data therein
+  - [ ] add more data sources for more aspects of the weather
+    - really extract more data from the XML
+  - [ ] actually build the dashboard, probably using [[https://rabbibotton.github.io/clog/clog-manual.html][CLOG]]
+    - also considering just producing a nice picture summarizing the
+      day's weather

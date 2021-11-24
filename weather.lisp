@@ -43,10 +43,23 @@
 			     "parameters"
 			     (xmls:xmlrep-find-child-tag "data" xml-weather-data))))))))
 
-(let ((weather (get-weather)))
-  (mapcar #'list
-	  (extract-time weather)
-	  (extract-hourly-temp weather)))
+(with-open-file (out "data" :direction :output :if-exists :supersede)
+  (mapcan #'(lambda (x) (format out "~a ~a~%" (car x) (cadr x)))
+	  (let ((weather (get-weather)))
+	    (mapcar #'list
+		    ;; remove timezone information
+		    (mapcar #'(lambda (x) (cl-ppcre:regex-replace
+					   "-0\\d:00" x ""))
+		    (extract-time weather))
+		    (extract-hourly-temp weather)))))
 
-;; TODO probably tidy time format and do something fun with these data
-;; points. plotting?
+(defun plot (filename)
+  "plots time-series data using `plot.sh` with FILENAME as the first
+argument"
+  (uiop:run-program (concatenate 'string "sh plot.sh " filename)))
+
+(defun cat (filename)
+  (with-open-file (in filename :direction :input)
+    (loop for line = (read-line in nil nil)
+	  while line do
+	    (format t "~a~%" line))))
